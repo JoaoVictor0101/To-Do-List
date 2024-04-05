@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>just do it </title>
+    <link rel="stylesheet" href="css/mainstyle.css">
+</head>
+
+<body>
+    <!--layout page -->
+
+    <div id="gridpage"class="page">
+        <div id="DarkMode">
+            <input type="checkbox">
+        </div>
+        
+        <!--menu-->
+
+        <div id="MenuId" class="menu">
+            <div class="tapyourList">
+                <h1 id="alll" class="i" >Crie sua <br>lista.</h1>
+            </div>
+            <div id="buttton" class="lis" onclick="clicke()">
+              
+                <img src="imgs to do list/+.png" alt="creat a list" width="40px" height="40px">
+            </div>
+        </div>
+
+        <!--cards to tasks-->
+        <div id="GridCard">
+            <div id="creatt"class="card">
+                <div id="deleteCard">
+                    <img src="imgs to do list/X.png" alt="remove" width="30" height="30">
+                </div>
+
+                <!--Name list-->
+
+                <div class="Area">
+                    <textarea rows="2" c maxlength="25" type="text" minlength="1" placeholder="Crie sua lista"
+                        id="list"></textarea>
+                </div>
+
+                <!--Description-->
+
+                <div class="Area">
+                    <textarea maxlength="80" id="description" placeholder="description..."></textarea>
+                </div>
+                <!--Bar Creat Task-->
+                <div class="Area">
+                    <input type="text" id="BarCreattask">
+                </div>
+
+                <!---creat button task-->
+
+                <div id="ButtonTask">
+                    <img src="imgs to do list/plus.png" alt="creat a list" width="30" height="30">
+                </div>
+                <!--Gridtask-->
+                <div class="AreaTask">
+
+                    <!--trash button-->
+                    
+                        <div id="trashButton">
+                            <img src="imgs to do list/trash.png" alt="trash" width="20" height="20">
+                        </div>
+                        <!--no check-->
+                        <div class="Area">
+                            <img id="noCheck" src="imgs to do list/no check.png" alt="noCheck" width="20" height="20">
+                        </div>
+                        <!--taks to make-->
+                        <div class="Area">
+                            <textarea id="task" rows="2"></textarea>
+                        </div>
+                        <!--Check-->
+                        <div class="Area">
+                            <img id="Check" src="imgs to do list/check.png" alt="check" width="20" height="20">
+                        </div>
+
+                        <div class="Area">
+                            <textarea id="taskCheck" rows="2"></textarea>
+                        </div>
+
+                        <div id="trashButton">
+                            <img src="imgs to do list/trash.png" alt="trash" width="20" height="20">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="ToDo.js"></script>
+</body>
+
+</html>
