@@ -3,7 +3,14 @@
    }
 }
 
-
+@keyframes cardAnimation{
+    0% {
+        transform: translateX(-1500px);
+    }
+    100%{
+        transform: translateX(100px);
+    }
+}
 
 @font-face {
     font-family:interBold;
@@ -84,20 +91,13 @@ input:checked[type='checkbox']::before{
 .menu{
     display: grid;
     grid-area: menu;
-}
-.lis{
-    justify-self: center;
-    margin-top: 15px;
-    cursor: pointer;
-}
-#buttton:hover{
-    opacity: 0.5;
+    margin-bottom: 600px;
 }
 
 .tapyourList{
     text-align: center;
     font-family: ExtraBold;
-   
+    
 }
 .textefc{
     opacity: 0;
@@ -106,42 +106,88 @@ input:checked[type='checkbox']::before{
 }
 .buttonEfect{
     animation-fill-mode: forwards;
-   animation-name: animation;
-   animation-duration: 2s;
+    animation-name: animation;
+    animation-duration: 2s;
    animation-delay: 1s;
+}
+.plusCard{
+    justify-self: center;
+    margin-top: 10px;
+  
+}
+.plusCardStyle{
+    background-color: #CDCCCC;
+    width: 115px;
+    border: none;
+    cursor: pointer;
+}
+.plusCardStyle:hover{
+    opacity: 0.5;
 }
 
 
 /*card*/
-.cardTask{
-    visibility: visible;
+.Sty{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
 }
 
-.card{
+.spaceCards{
+    display:flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: start;
+    margin-left: 460px;
+}
+
+.cardStyle{
+    margin-right: 30px;
+    margin-left: 20px;
     margin-top: 45px;
     box-shadow: 0px 10px 10px 2px grey;
-    margin-left: 120px;
-    display: none;
+    display: grid;
     grid-area: card;
     background: #DEDFE8;
     width:370px;
     grid-template-rows: 35px 90px 70px 0px 70px; 
     height: 470px;
     border-radius: 6px;
+    
 }
+/* animation of the card */
+.Animationcard{
+    display: grid;
+    animation-duration: 3.5s;
+    animation-name: cardAnimation;
+    animation-fill-mode: forwards;
+}
+
 /* cards task*/
 
-#deleteCard{
+#deleteCardContainer{
     justify-self: end;
     margin:5px;
+    
+}
+.removeCardstyle{
+    border: none;
+    background-color:#DEDFE8; 
+    cursor: pointer;
+}
+#x:hover{
+    opacity: 0.5;
 }
 .Area{
     margin-left: 35px;
+    width: 240px;
 }
 
 /* part of name and description*/
 
-#list{
+.NameListStyle{
     border: 0;
     outline: 0;
     font-family: ExtraBold;
@@ -157,7 +203,7 @@ textarea{
     resize: none;
     overflow: hidden;
 }
-#description{
+.descriptionStyle{
     text-align: justify;
     opacity: 0.5;
     font-size: 14px;
@@ -169,7 +215,7 @@ textarea{
     height: 50px;
 }
 
-#BarCreattask{
+.BartoTaskStyle{
     margin-top: 10px;
     width: 270px;
     border: 0;
@@ -180,28 +226,36 @@ textarea{
     font-size: 15px;
     height: 30px;
 }
-#ButtonTask{
+.ButtontoTaskContainer{
     justify-self: end;
     margin-right: 30px;
 }
+.ButtonTask{
+    border: none;
+    background-color: #DEDFE8;
+    cursor: pointer;
+}
+.ButtonTask:hover{
+    opacity: 0.5;
+}
+/*space to tasks*/
 
-
-
-/*Grid Card*/
-#GridCard
-
-/*part of creation tasks*/
-
-.AreaTask{
+.AreaTaskContainer{
     display: grid;
     grid-template-rows: 0px 0px 60px 0px 0px
-
 }
-#trashButton{
+.trashButtonContainer{
     justify-self: end;
     margin-right: 35px;
 }
-#task{
+.trash{
+    border:none;
+    background-color: #DEDFE8;
+    cursor: pointer;
+}
+.taskStyle{
+    word-break: break-all;
+    margin-top: 2px;
     margin-left: 30px;
     outline: 0;
     border: 0px;
@@ -210,7 +264,9 @@ textarea{
     font-size: 14px;
     width: 240px;
 }
-#taskCheck{
+.taskCheckStyle{
+    margin-top: 2px;
+    word-break: break-all;
     margin-left: 30px;
     outline: 0;
     border: 0px;
@@ -220,7 +276,11 @@ textarea{
     width: 240px;
     opacity: 0.5;
 }
-#Check{
+.buttonCheckStylesAndNo{
+    border: none;
+
+}
+.CheckStyle{
 opacity: 0.5;
 }
 
