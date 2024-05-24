@@ -127,18 +127,15 @@ input:checked[type='checkbox']::before{
 
 
 /*card*/
-.Sty{
-    display: flex;
-   
-}
+
 
 .spaceCards{
     display:flex;
-    flex-direction: row-reverse;  
+    flex-direction: row;  
     align-items: center;
     justify-content: start;
     margin-left: 460px;
-    overflow: hidden;
+    overflow: hidd;
     width: 400px;
     height: 530px;
 }
