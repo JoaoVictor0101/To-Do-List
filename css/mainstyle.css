@@ -140,6 +140,10 @@ input:checked[type='checkbox']::before{
     height: 530px;
 }
 
+.ioi{
+    display: flex;
+    flex-direction: row-reverse;
+}
 .cardStyle{
     margin-right: 30px;
     margin-left: 20px;

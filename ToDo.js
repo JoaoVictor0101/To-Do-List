@@ -9,24 +9,31 @@ Amrmazenar os cards no local storage
  */
 
 // create card
-const gridCard = document.getElementById ("GridCard");
+const gridCard = document.getElementById("GridCard");
 const ia = document.getElementById("cardContainer");
 const i = document.getElementById("nameList");
 const ButtonCard = document.getElementById("plusHover");
-const oia = document.getElementById("oia") 
+const inputDescription = document.getElementById("inputDescription") 
+const CreateTaskBar = document.getElementById("CreateTaskBar")
+const ioi = document.getElementById("pop")
 let change = 0;
 let click = 1;
 
-
+console.log(click)
 function createCard(){ 
-
+  click++
     console.log(click)
-  if (click > 0 && i.value === "" ){
+  if ((click > 0) && (i.value.trim() === "")){
     alert("add algo")
   }else{
-      let clone = oia.cloneNode(true) 
-      gridCard.appendChild(clone)
-    i.value=""
+      // 
+      let clone = ia.cloneNode(true) 
+      let placeToClones = document.createElement("div")
+      placeToClones.appendChild(clone)
+      ioi.appendChild(placeToClones)
+    i.value =""
+    inputDescription.value = ""
+    CreateTaskBar.value = ""
   }
   
     
