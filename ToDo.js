@@ -8,44 +8,32 @@ Amrmazenar os cards no local storage
  const gridCard = document.getElementById("GridCard");
  */
 
-// create card
+// create card/ validation
 const gridCard = document.getElementById("GridCard");
-const ia = document.getElementById("cardContainer");
-const i = document.getElementById("nameList");
+const cardContainer = document.getElementById("cardContainer");
+const idNameList = document.getElementById("nameList");
 const ButtonCard = document.getElementById("plusHover");
 const inputDescription = document.getElementById("inputDescription") 
 const CreateTaskBar = document.getElementById("CreateTaskBar")
-const ioi = document.getElementById("pop")
-let change = 0;
+const ContainerToDivClones = document.getElementById("cardContainerClones")
 let click = 1;
 
-console.log(click)
+// creation/validation
+
 function createCard(){ 
   click++
     console.log(click)
-  if ((click > 0) && (i.value.trim() === "")){
+  if ((click > 0) && (idNameList.value.trim() === "")){
     alert("add algo")
   }else{
       // 
-      let clone = ia.cloneNode(true) 
+      let clone = cardContainer.cloneNode(true) 
       let placeToClones = document.createElement("div")
       placeToClones.appendChild(clone)
-      ioi.appendChild(placeToClones)
-    i.value =""
+      ContainerToDivClones.appendChild(placeToClones)
+      idNameList.value =""
     inputDescription.value = ""
     CreateTaskBar.value = ""
   }
-  
-    
 }
 ButtonCard.addEventListener("click",createCard);
-
-// Card validaion
-
-function validaion(){
-}
-
-    // conseguimos pegar o valor do text area, agora é com você good luck
-
-    // precisamos fazer uma logica que impessa que um card sem nome possa ser criado
-

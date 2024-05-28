@@ -55,6 +55,7 @@ body{
    align-self: start;
    margin: 40px;
 }
+
 input[type='checkbox']{
     height:30px;
     width: 60px;
@@ -66,7 +67,7 @@ input[type='checkbox']{
     transition: 0.4s;
     position: relative;
 }
-input:checked[type='checkbox']{
+ input:checked[type='checkbox']{
     background-color: black;
 }
 input[type='checkbox']::before{
@@ -140,7 +141,7 @@ input:checked[type='checkbox']::before{
     height: 530px;
 }
 
-.ioi{
+.cardContainerCloneStyle{
     display: flex;
     flex-direction: row-reverse;
 }
@@ -248,16 +249,21 @@ textarea{
 .trashButtonContainer{
     justify-self: end;
     margin-right: 35px;
+    
 }
 .trash{
     border:none;
     background-color: #DEDFE8;
     cursor: pointer;
 }
+.Area1{
+    margin-left: 60px;
+    width: 200px;
+}
 .taskStyle{
     word-break: break-all;
     margin-top: 2px;
-    margin-left: 30px;
+    margin-left: 0px;
     outline: 0;
     border: 0px;
     background: #DEDFE8;
@@ -265,6 +271,10 @@ textarea{
     font-size: 14px;
     width: 240px;
 }
+.NoAndCheck{
+    width: 30px;
+}
+
 .taskCheckStyle{
     margin-top: 2px;
     word-break: break-all;
@@ -279,7 +289,6 @@ textarea{
 }
 .buttonCheckStylesAndNo{
     border: none;
-
 }
 .CheckStyle{
 opacity: 0.5;
