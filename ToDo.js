@@ -37,3 +37,21 @@ function createCard(){
   }
 }
 ButtonCard.addEventListener("click",createCard);
+
+// tasks
+
+
+const TaskButton = document.getElementById("TaskButton");
+
+// talvez depois mudar a forma de validação de card para permitir apenas tenha colocado algo nos campos
+
+// pick the value   
+// ajeitando questões de keybord
+function CreateTask(){
+  console.log(CreateTaskBar.value)
+
+}
+// ajeitando questões de keybord
+TaskButton.addEventListener("keyup",(e) => {
+  console.log(e.key)
+});

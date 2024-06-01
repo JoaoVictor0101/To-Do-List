@@ -1,318 +1,311 @@
 @keyframes animation{
-   100%{ transform: translateY(-300px);
-   }
-}
-
-@keyframes cardAnimation{
-    0% {
-        transform: translateX(-1500px);
+    100%{ transform: translateY(-300px);
     }
-    100%{
-        transform: translateX(100px);
-    }
-}
-
-@font-face {
-    font-family:interBold;
-    src: url(../fonts/Inter-Bold.ttf);
-}
-@font-face {
-    font-family:Extrabold;
-    src: url(../fonts/Inter-ExtraBold.ttf);
-}
-@font-face {
-    font-family:InterMedium;
-    src: url(../fonts/Inter-Medium.ttf);
-}
-
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: #CDCCCC;
-    overflow: hidden;
-    
-}
-.page{
-    height: 100vh;
-    width: 100vw;
-    display: grid;
-    grid-template-areas:
-    'DarkMode card  menu';
-    grid-template-columns: 20px 40px 1250px;
-    justify-content: start;
-    align-items: center;
-}
-
-/* Dark Mode*/
-
-#DarkMode{
-   grid-area: DarkMode;
-   display: grid;
-   align-self: start;
-   margin: 40px;
-}
-
-input[type='checkbox']{
-    height:30px;
-    width: 60px;
-    appearance: none;
-    background-color: #DEDFE8;
-    border-radius: 50px;
-    box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0. 24);
-    cursor: pointer;
-    transition: 0.4s;
-    position: relative;
-}
- input:checked[type='checkbox']{
-    background-color: black;
-}
-input[type='checkbox']::before{
-    content: '';
-    width: 30px;
-    height: 30px;
-    background-color:azure;
-    border-radius: 50px;
-    position: absolute;
-    box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0. 24); 
-    transform: scale(1.1);
-    top: 0;
-    left: 0;
-    transition: 0.4s;
-}
-input:checked[type='checkbox']::before{
-    left: 40px;
-}
-
-/*tap your list*/
-
-.menu{
-    display: grid;
-    grid-area: menu;
-    margin-bottom: 600px;
-}
-
-.tapyourList{
-    text-align: center;
-    font-family: ExtraBold;
-    
-}
-.textefc{
-    opacity: 0;
-    transition: 0.4s;
-    
-}
-.buttonEfect{
-    animation-fill-mode: forwards;
-    animation-name: animation;
-    animation-duration: 2s;
-   animation-delay: 1s;
-}
-.plusCard{
-    justify-self: center;
-    margin-top: 10px;
-  
-}
-.plusCardStyle{
-    background-color: #CDCCCC;
-    width: 115px;
-    border: none;
-    cursor: pointer;
-}
-.plusCardStyle:hover{
-    opacity: 0.5;
-}
-
-
-/*card*/
-
-
-.spaceCards{
-    display:flex;
-    flex-direction: row;  
-    align-items: center;
-    justify-content: start;
-    margin-left: 460px;
-    overflow: hidd;
-    width: 400px;
-    height: 530px;
-}
-
-.cardContainerCloneStyle{
-    display: flex;
-    flex-direction: row-reverse;
-}
-.cardStyle{
-    margin-right: 30px;
-    margin-left: 20px;
-    margin-top: 20px;
-    box-shadow: 0px 10px 10px 2px grey;
-    display: grid;
-    grid-area: card;
-    background: #DEDFE8;
-    width:370px;
-    grid-template-rows: 35px 90px 70px 0px 70px; 
-    height: 470px;
-    border-radius: 6px;
-    
-}
-/* animation of the card */
-.Animationcard{
-    display: grid;
-    animation-duration: 3.5s;
-    animation-name: cardAnimation;
-    animation-fill-mode: forwards;
-}
-
-/* cards task*/
-
-#deleteCardContainer{
-    justify-self: end;
-    margin:5px;
-    
-}
-.removeCardstyle{
-    border: none;
-    background-color:#DEDFE8; 
-    cursor: pointer;
-}
-#x:hover{
-    opacity: 0.5;
-}
-.Area{
-    margin-left: 35px;
-    width: 240px;
-}
-
-/* part of name and description*/
-
-.NameListStyle{
-    border: 0;
-    outline: 0;
-    font-family: ExtraBold;
-    font-size: 30px;
-    width: 270px;
-    background: #DEDFE8;
-}
-::placeholder{
-    color: black;
-    opacity: 1;
-}
-textarea{
-    resize: none;
-    overflow: hidden;
-}
-.descriptionStyle{
-    text-align: justify;
-    opacity: 0.5;
-    font-size: 14px;
-    border: 0;
-    outline: 0;
-    background: #DEDFE8;
-    font-family: Interbold;
-    width: 250px;
-    height: 50px;
-}
-
-.BartoTaskStyle{
-    margin-top: 10px;
-    width: 270px;
-    border: 0;
-    border-bottom: black solid 1px;
-    outline: 0;
-    background: #DEDFE8;
-    font-family:InterMedium;
-    font-size: 15px;
-    height: 30px;
-}
-.ButtontoTaskContainer{
-    justify-self: end;
-    margin-right: 30px;
-}
-.ButtonTask{
-    border: none;
-    background-color: #DEDFE8;
-    cursor: pointer;
-}
-.ButtonTask:hover{
-    opacity: 0.5;
-}
-/*space to tasks*/
-
-.AreaTaskContainer{
-    display: grid;
-    grid-template-rows: 0px 0px 60px 0px 0px
-}
-.trashButtonContainer{
-    justify-self: end;
-    margin-right: 35px;
-    
-}
-.trash{
-    border:none;
-    background-color: #DEDFE8;
-    cursor: pointer;
-}
-.Area1{
-    margin-left: 60px;
-    width: 200px;
-}
-.taskStyle{
-    word-break: break-all;
-    margin-top: 2px;
-    margin-left: 0px;
-    outline: 0;
-    border: 0px;
-    background: #DEDFE8;
-    font-family: InterMedium;
-    font-size: 14px;
-    width: 240px;
-}
-.NoAndCheck{
-    width: 30px;
-}
-
-.taskCheckStyle{
-    margin-top: 2px;
-    word-break: break-all;
-    margin-left: 30px;
-    outline: 0;
-    border: 0px;
-    background: #DEDFE8;
-    font-family: InterMedium;
-    font-size: 14px;
-    width: 240px;
-    opacity: 0.5;
-}
-.buttonCheckStylesAndNo{
-    border: none;
-}
-.CheckStyle{
-opacity: 0.5;
-}
-
-/* Scroll */
-::-webkit-scrollbar{
-    height: 10px;
-}
-::-webkit-scrollbar-track{
-    height: 10px;
-    background-color: #DEDFE8;
  }
-::-webkit-scrollbar-thumb{
-    background-color: #181717;
-    border-radius: 15px;
-    
-}
-
-
-
-
-
-
-
-
-
+ 
+ @keyframes cardAnimation{
+     0% {
+         transform: translateX(-1500px);
+     }
+     100%{
+         transform: translateX(100px);
+     }
+ }
+ 
+ @font-face {
+     font-family:interBold;
+     src: url(../fonts/Inter-Bold.ttf);
+ }
+ @font-face {
+     font-family:Extrabold;
+     src: url(../fonts/Inter-ExtraBold.ttf);
+ }
+ @font-face {
+     font-family:InterMedium;
+     src: url(../fonts/Inter-Medium.ttf);
+ }
+ 
+ 
+ *{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+ body{
+     background-color: #CDCCCC;
+     overflow: hidden;
+     
+ }
+ .page{
+     height: 100vh;
+     width: 100vw;
+     display: grid;
+     grid-template-areas:
+     'DarkMode card  menu';
+     grid-template-columns: 20px 40px 1250px;
+     justify-content: start;
+     align-items: center;
+ }
+ 
+ /* Dark Mode*/
+ 
+ #DarkMode{
+    grid-area: DarkMode;
+    display: grid;
+    align-self: start;
+    margin: 40px;
+ }
+ 
+ input[type='checkbox']{
+     height:30px;
+     width: 60px;
+     appearance: none;
+     background-color: #DEDFE8;
+     border-radius: 50px;
+     box-shadow: inset 0px 0px 2px 1px rgba(0, 0, 0, 0. 24);
+     cursor: pointer;
+     transition: 0.4s;
+     position: relative;
+ }
+  input:checked[type='checkbox']{
+     background-color: black;
+ }
+ input[type='checkbox']::before{
+     content: '';
+     width: 30px;
+     height: 30px;
+     background-color:azure;
+     border-radius: 50px;
+     position: absolute;
+     box-shadow: 0px 4px 8px 1px rgba(0, 0, 0, 0. 24); 
+     transform: scale(1.1);
+     top: 0;
+     left: 0;
+     transition: 0.4s;
+ }
+ input:checked[type='checkbox']::before{
+     left: 40px;
+ }
+ 
+ /*tap your list*/
+ 
+ .menu{
+     display: grid;
+     grid-area: menu;
+     margin-bottom: 600px;
+ }
+ 
+ .tapyourList{
+     text-align: center;
+     font-family: ExtraBold;
+     
+ }
+ .textefc{
+     opacity: 0;
+     transition: 0.4s;
+     
+ }
+ .buttonEfect{
+     animation-fill-mode: forwards;
+     animation-name: animation;
+     animation-duration: 2s;
+    animation-delay: 1s;
+ }
+ .plusCard{
+     justify-self: center;
+     margin-top: 10px;
+   
+ }
+ .plusCardStyle{
+     background-color: #CDCCCC;
+     width: 115px;
+     border: none;
+     cursor: pointer;
+ }
+ .plusCardStyle:hover{
+     opacity: 0.5;
+ }
+ 
+ 
+ /*card*/
+ 
+ 
+ .spaceCards{
+     display:flex;
+     flex-direction: row;  
+     align-items: center;
+     justify-content: start;
+     margin-left: 460px;
+     overflow: hidd;
+     width: 400px;
+     height: 530px;
+ }
+ 
+ .cardContainerCloneStyle{
+     display: flex;
+     flex-direction: row-reverse;
+ }
+ .cardStyle{
+     margin-right: 30px;
+     margin-left: 20px;
+     margin-top: 20px;
+     box-shadow: 0px 10px 10px 2px grey;
+     display: grid;
+     grid-area: card;
+     background: #DEDFE8;
+     width:370px;
+     grid-template-rows: 35px 90px 70px 0px 70px; 
+     height: 470px;
+     border-radius: 6px;
+     
+ }
+ /* animation of the card */
+ .Animationcard{
+     display: grid;
+     animation-duration: 3.5s;
+     animation-name: cardAnimation;
+     animation-fill-mode: forwards;
+ }
+ 
+ /* cards task*/
+ 
+ #deleteCardContainer{
+     justify-self: end;
+     margin:5px;
+     
+ }
+ .removeCardstyle{
+     border: none;
+     background-color:#DEDFE8; 
+     cursor: pointer;
+ }
+ #x:hover{
+     opacity: 0.5;
+ }
+ .Area{
+     margin-left: 35px;
+     width: 240px;
+ }
+ 
+ /* part of name and description*/
+ 
+ .NameListStyle{
+     border: 0;
+     outline: 0;
+     font-family: ExtraBold;
+     font-size: 30px;
+     width: 270px;
+     background: #DEDFE8;
+ }
+ ::placeholder{
+     color: black;
+     opacity: 1;
+ }
+ textarea{
+     resize: none;
+     overflow: hidden;
+ }
+ .descriptionStyle{
+     text-align: justify;
+     opacity: 0.5;
+     font-size: 14px;
+     border: 0;
+     outline: 0;
+     background: #DEDFE8;
+     font-family: Interbold;
+     width: 250px;
+     height: 50px;
+ }
+ 
+ .BartoTaskStyle{
+     margin-top: 10px;
+     width: 270px;
+     border: 0;
+     border-bottom: black solid 1px;
+     outline: 0;
+     background: #DEDFE8;
+     font-family:InterMedium;
+     font-size: 15px;
+     height: 30px;
+ }
+ .ButtontoTaskContainer{
+     justify-self: end;
+     margin-right: 30px;
+ }
+ .ButtonTask{
+     border: none;
+     background-color: #DEDFE8;
+     cursor: pointer;
+ }
+ .ButtonTask:hover{
+     opacity: 0.5;
+ }
+ /*space to tasks*/
+ 
+ .taskStylea{
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 20px;
+ }
+ .trashButtonContainer{
+    order: 3;
+    margin-left: 60px;
+     
+ }
+ .trash{
+     border:none;
+     background-color: #DEDFE8;
+     cursor: pointer;
+ }
+ .Area1{
+    order: 2;
+     width: 190px;
+     margin-left: 10px;
+ }
+ .taskStyle{
+     word-break: break-all;
+     margin-top: 2px;
+     outline: 0;
+     border: 0px;
+     background: #DEDFE8;
+     font-family: InterMedium;
+     font-size: 14px;
+     width: 240px;
+ }
+ .NoAndCheck{
+    order: 1;
+     width: 20px;
+     margin-left: 35px;
+ }
+ 
+ .taskCheckStyle{
+     margin-top: 2px;
+     word-break: break-all;
+     outline: 0;
+     border: 0px;
+     background: #DEDFE8;
+     font-family: InterMedium;
+     font-size: 14px;
+     width: 240px;
+     opacity: 0.5;
+ }
+ .buttonCheckStylesAndNo{
+     border: none;
+ }
+ .CheckStyle{
+ opacity: 0.5;
+ }
+ 
+ /* Scroll */
+ ::-webkit-scrollbar{
+     height: 10px;
+ }
+ ::-webkit-scrollbar-track{
+     height: 10px;
+     background-color: #DEDFE8;
+  }
+ ::-webkit-scrollbar-thumb{
+     background-color: #181717;
+     border-radius: 15px;
+     
+ }
