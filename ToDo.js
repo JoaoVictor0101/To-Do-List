@@ -34,11 +34,11 @@ function createCard(){
       idNameList.value =""
     inputDescription.value = ""
     CreateTaskBar.value = ""
-    AreaTasks = ""
+    Tasks.innerHTML=""
   }
 }
-ButtonCard.addEventListener("click",createCard);
 
+ButtonCard.addEventListener("click",createCard);
 // tasks
 
 
@@ -47,13 +47,11 @@ const Tasks = document.getElementById("TaskNoCheck")
 
 // talvez depois mudar a forma de validação de card para permitir apenas tenha colocado algo nos campos
 
-// pick the value   
+// pick the value and create tasks
 
-// ajeitar questão de clonagem de tasks 
 function CreateTask(){
-  console.log(CreateTaskBar.value)
   if (!CreateTaskBar.value.trim() == ""){
-    let TaskNoCheck = document.createElement("div");
+    const TaskNoCheck = document.createElement("div");
     TaskNoCheck.innerHTML=`<div class="taskStylea">
     <div class="trashButtonContainer">
         <button class="trash">
@@ -63,10 +61,8 @@ function CreateTask(){
     <!--no check
     mudar ajeitar essas chack boxes 
     -->
-    <div class="NoAndCheck">
-        <div>
+    <div class="NoAndCheck" onclick="o()">
             <img src="imgs to do list/no-check.svg" alt="">
-        </div>
     </div>
 
     <!--taks to make-->
@@ -76,11 +72,35 @@ function CreateTask(){
 </div>`
     Tasks.appendChild(TaskNoCheck)
     CreateTaskBar.value = ""
+    
   }else{
     
     alert("asdifef")
   }
 
 }
-// ajeitando questões de keybord
 TaskButton.addEventListener("click", CreateTask);
+// tentando resolver questões do botão de check
+function o (){
+  TaskNoCheck.innerHTML= `<div class="taskStylea">
+  <div class="trashButtonContainer">
+      <button class="trash">
+      <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
+      </button>
+  </div>
+  <!--no check
+  mudar ajeitar essas chack boxes 
+  -->
+  <div class="NoAndCheck" onclick="o()">
+     <img src="imgs to do list/check.svg" alt="">
+  </div>
+
+  <!--taks to make-->
+  <div class="Area1">
+  <p>${CreateTaskBar.classList.add("taskCheckStyle")}</p>
+  </div>
+</div> `
+}
+
+
+
