@@ -43,64 +43,56 @@ ButtonCard.addEventListener("click",createCard);
 
 
 const TaskButton = document.getElementById("TaskButton");
-const Tasks = document.getElementById("TaskNoCheck")
+const Tasks = document.getElementById("TaskNoCheck");
+let oio =""
+
+
 
 // talvez depois mudar a forma de validação de card para permitir apenas tenha colocado algo nos campos
 
-// pick the value and create tasks
+// tentando resolver questões do botão de check
 
+// dentro da função é possivel armazenar os valores de creatTaskBar, enttão provavelmente teremos de criar uma função dentro de outra função para poder funcionar kkkkk
+
+// pick the value and create tasks
 function CreateTask(){
   if (!CreateTaskBar.value.trim() == ""){
     const TaskNoCheck = document.createElement("div");
     TaskNoCheck.innerHTML=`<div class="taskStylea">
     <div class="trashButtonContainer">
-        <button class="trash">
-        <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
-        </button>
+    <button class="trash">
+    <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
+    </button>
     </div>
     <!--no check
     mudar ajeitar essas chack boxes 
     -->
     <div class="NoAndCheck" onclick="o()">
-            <img src="imgs to do list/no-check.svg" alt="">
+    <img src="imgs to do list/no-check.svg" alt="">
     </div>
-
+    
     <!--taks to make-->
     <div class="Area1">
     <p class="taskStyle">${CreateTaskBar.value}</p>
     </div>
-</div>`
+    </div>`
     Tasks.appendChild(TaskNoCheck)
-    CreateTaskBar.value = ""
+    oio = CreateTaskBar.value
     
+    CreateTaskBar.value=""
+    
+ 
   }else{
     
     alert("asdifef")
   }
+  
+  console.log(oio)
 
 }
 TaskButton.addEventListener("click", CreateTask);
-// tentando resolver questões do botão de check
-function o (){
-  TaskNoCheck.innerHTML= `<div class="taskStylea">
-  <div class="trashButtonContainer">
-      <button class="trash">
-      <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
-      </button>
-  </div>
-  <!--no check
-  mudar ajeitar essas chack boxes 
-  -->
-  <div class="NoAndCheck" onclick="o()">
-     <img src="imgs to do list/check.svg" alt="">
-  </div>
 
-  <!--taks to make-->
-  <div class="Area1">
-  <p>${CreateTaskBar.classList.add("taskCheckStyle")}</p>
-  </div>
-</div> `
-}
+
 
 
 
