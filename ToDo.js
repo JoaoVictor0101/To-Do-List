@@ -9,7 +9,7 @@ Amrmazenar os cards no local storage
  */
 
 // create card/ validation
-const gridCard = document.getElementById("GridCard");
+const gridCard = document.getElementById ("GridCard");
 const cardContainer = document.getElementById("cardContainer");
 const idNameList = document.getElementById("nameList");
 const ButtonCard = document.getElementById("plusHover");
@@ -17,13 +17,12 @@ const inputDescription = document.getElementById("inputDescription")
 const CreateTaskBar = document.getElementById("CreateTaskBar")
 const ContainerToDivClones = document.getElementById("cardContainerClones")
 const AreaTasks = document.getElementById("AreaTasks")
-let click = 1;
+
 
 // creation/validation
 
 function createCard(){ 
-  click++
-  if ((click > 0) && (idNameList.value.trim() === "")){
+  if ((idNameList.value.trim() === "")){
     alert("add algo")
   }else{
       // 
@@ -38,13 +37,13 @@ function createCard(){
   }
 }
 
+
 ButtonCard.addEventListener("click",createCard);
 // tasks
 
-
 const TaskButton = document.getElementById("TaskButton");
 const Tasks = document.getElementById("TaskNoCheck");
-let oio =""
+let increase = 0;
 
 
 
@@ -52,13 +51,23 @@ let oio =""
 
 // tentando resolver questões do botão de check
 
-// dentro da função é possivel armazenar os valores de creatTaskBar, enttão provavelmente teremos de criar uma função dentro de outra função para poder funcionar kkkkk
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
+// organizar logica é codigo para entender o que e por que estamos fazendo 
 
 // pick the value and create tasks
+
 function CreateTask(){
+  ++increase
   if (!CreateTaskBar.value.trim() == ""){
-    const TaskNoCheck = document.createElement("div");
-    TaskNoCheck.innerHTML=`<div class="taskStylea">
+    let TaskNoCheck = `<div class="taskStylea">
     <div class="trashButtonContainer">
     <button class="trash">
     <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
@@ -76,8 +85,9 @@ function CreateTask(){
     <p class="taskStyle">${CreateTaskBar.value}</p>
     </div>
     </div>`
-    Tasks.appendChild(TaskNoCheck)
-    oio = CreateTaskBar.value
+
+    AreaTasks.innerHTML+=TaskNoCheck
+    
     
     CreateTaskBar.value=""
     
@@ -88,11 +98,17 @@ function CreateTask(){
   }
   
   console.log(oio)
-
+  
 }
-TaskButton.addEventListener("click", CreateTask);
+TaskButton.addEventListener("click", () => {
+  CreateTask()
+});
 
-
+console.log()
+function o (){
+  
+  
+}
 
 
 
