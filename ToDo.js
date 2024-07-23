@@ -37,7 +37,6 @@ function createCard(){
   }
 }
 
-
 ButtonCard.addEventListener("click",createCard);
 // tasks
 
@@ -49,6 +48,7 @@ let increase = 0;
 
 // talvez depois mudar a forma de validação de card para permitir apenas tenha colocado algo nos campos
 
+// resolver a questão de sumir com as tasks quando um novo card for criado 
 // tentando resolver questões do botão de check
 
 // organizar logica é codigo para entender o que e por que estamos fazendo 
@@ -65,7 +65,6 @@ let increase = 0;
 // pick the value and create tasks
 
 function CreateTask(){
-  ++increase
   if (!CreateTaskBar.value.trim() == ""){
     let TaskNoCheck = `<div class="taskStylea">
     <div class="trashButtonContainer">
@@ -74,7 +73,7 @@ function CreateTask(){
     </button>
     </div>
     <!--no check
-    mudar ajeitar essas chack boxes 
+    mudar ajeitar essas chack boxes
     -->
     <div class="NoAndCheck" onclick="o()">
     <img src="imgs to do list/no-check.svg" alt="">
@@ -85,12 +84,9 @@ function CreateTask(){
     <p class="taskStyle">${CreateTaskBar.value}</p>
     </div>
     </div>`
-
     AreaTasks.innerHTML+=TaskNoCheck
-    
-    
+  
     CreateTaskBar.value=""
-    
  
   }else{
     
@@ -102,13 +98,14 @@ function CreateTask(){
 }
 TaskButton.addEventListener("click", () => {
   CreateTask()
+  
 });
 
 console.log()
-function o (){
-  
+function clearTheAreaTask(){
+  AreaTasks.innerHTML="";
   
 }
-
+ButtonCard.addEventListener("click",clearTheAreaTask);
 
 

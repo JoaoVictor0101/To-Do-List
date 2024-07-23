@@ -11,100 +11,103 @@
 <body>
     <!--layout page -->
 
-    <div id="gridpage"class="page">
+    <div id="gridpage" class="page">
         <div id="DarkMode">
             <input id="iai" type="checkbox">
-            
+
         </div>
         <!--menu-->
 
         <div class="menu">
             <div class="tapyourList">
-                 <!-- <h1>Crie sua <br>lista.</h1> -->
+                <!-- <h1>Crie sua <br>lista.</h1> -->
             </div>
             <div class="plusCard">
-                <button class="plusCardStyle" id="plusHover" ><img src="imgs to do list/plus-circle-svgrepo-com (1).svg" alt=""></button>
+                <button class="plusCardStyle" id="plusHover"><img src="imgs to do list/plus-circle-svgrepo-com (1).svg"
+                        alt=""></button>
             </div>
         </div>
-             
+
         <!--cards to tasks-->
-          <div id="GridCard" class="spaceCards"> 
-        
+        <div id="GridCard" class="spaceCards">
+
             <div id="oia" class="cardContainer2">
-               
-            <div id="cardContainer" class="cardStyle">
-   
-                <div id="deleteCardContainer">
-                    <button id="x" class="removeCardstyle"alt="remnovecard">
-                        <img src="imgs to do list/remove-svgrepo-com.svg" alt="remove_card">
-                        <!-- <i class="bi bi-x" style="font-size: 40px;"></i> 
-                    </button> -->
-                </div>
-                
-                <!--Name list-->
-                
-                <div class="Area">
-                    <textarea rows="2"  maxlength="25" type="text" minlength="1" placeholder="Crie sua lista"
-                        class="NameListStyle" id ="nameList"></textarea>
-                </div>
-                
-                <!--Description-->
-                
-                <div class="Area">
-                    <textarea maxlength="80"  id = "inputDescription" class="descriptionStyle" placeholder="description..."></textarea>
-                </div>
-                <!--Bar Creat Task and tasks-->
-               
-                
-                <div class="Area">
-                    <input id ="CreateTaskBar" type="text"class="BartoTaskStyle">
-                </div>
-                
-                <!---create button task-->
-                
-                <div class="ButtontoTaskContainer">
-                    <button class="ButtonTask" id="TaskButton">
-                        <img src="imgs to do list/plus-square-svgrepo-com.svg" alt="">
-                    </button>
-                </div>
-            
-        
-                <!--Gridtask-->
-                <div class="AreaTaskContainer" id="AreaTasks">
-                
-                    <!--trash button-->
-                    <!-- ajetar os botões de trash na tasks -->
-                   
+
+                <div id="cardContainer" class="cardStyle">
+
+                    <div id="deleteCardContainer">
+                        <button id="x" class="removeCardstyle" alt="remnovecard">
+                            <img src="imgs to do list/remove-svgrepo-com.svg" alt="remove_card">
+                            <!-- <i class="bi bi-x" style="font-size: 40px;"></i> 
+</button> -->
+                    </div>
+
+                    <!--Name list-->
+
+                    <div class="Area">
+                        <textarea rows="2" maxlength="25" type="text" minlength="1" placeholder="Crie sua lista"
+                            class="NameListStyle" id="nameList"></textarea>
+                    </div>
+
+                    <!--Description-->
+
+                    <div class="Area">
+                        <textarea maxlength="80" id="inputDescription" class="descriptionStyle"
+                            placeholder="description..."></textarea>
+                    </div>
+                    <!--Bar Creat Task and tasks-->
+
+
+                    <div class="Area">
+                        <input id="CreateTaskBar" type="text" class="BartoTaskStyle">
+                    </div>
+
+                    <!---create button task-->
+
+                    <div class="ButtontoTaskContainer">
+                        <button class="ButtonTask" id="TaskButton">
+                            <img src="imgs to do list/plus-square-svgrepo-com.svg" alt="">
+                        </button>
+                    </div>
+
+
+                    <!--Gridtask-->
+                    <div class="AreaTaskContainer" id="AreaTasks">
+
+                        <!--trash button-->
+                        <!-- ajetar os botões de trash na tasks -->
+
                         <!--Checkz
                         ajeitar essas check boxes 
                         -->
-                    <div class="taskStylea">
-                    
-                        <div class="NoAndCheck">
-                            <img src="imgs to do list/check.svg" alt="">
-                        </div>
-                    
-            
-                    <div class="Area1">
-                        <p class="taskCheckStyle" rows="2">testeqwiejqij</p>
-                    </div>
-                    <!-- ajetar os botões de trash na tasks -->
-                    <div class="trashButtonContainer">
-                        <button class="trash">
-                            <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
-                        </button>
-                    </div>
-                </div>
-                </div>
-                </div>
-           
-            </div>
-            <div id="cardContainerClones"class="cardContainerCloneStyle">
+                        <div class="taskStylea">
 
-            </div>
+                            <div class="NoAndCheck">
+                                <img src="imgs to do list/check.svg" alt="">
+                            </div>
+
+
+                            <div class="Area1">
+                                <p class="taskCheckStyle" rows="2">testeqwiejqij</p>
+                            </div>
+                            <!-- ajetar os botões de trash na tasks -->
+                            <div class="trashButtonContainer">
+                                <button class="trash">
+                                    <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+             </div> <!-- final do container card -->
+            <div id="cardContainerClones" class="cardContainerCloneStyle">
+
             </div>
         </div>
     </div>
+    
     <script src="ToDo.js"></script>
 </body>
-    </html>
+
+</html>
