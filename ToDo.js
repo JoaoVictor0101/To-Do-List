@@ -33,7 +33,7 @@ function createCard(){
       idNameList.value =""
     inputDescription.value = ""
     CreateTaskBar.value = ""
-    Tasks.innerHTML=""
+    
   }
 }
 
@@ -41,7 +41,7 @@ ButtonCard.addEventListener("click",createCard);
 // tasks
 
 const TaskButton = document.getElementById("TaskButton");
-const Tasks = document.getElementById("TaskNoCheck");
+
 let increase = 0;
 
 
@@ -66,6 +66,7 @@ let increase = 0;
 
 function CreateTask(){
   if (!CreateTaskBar.value.trim() == ""){
+    const taskValue = CreateTaskBar.value;
     let TaskNoCheck = `<div class="taskStylea">
     <div class="trashButtonContainer">
     <button class="trash">
@@ -75,7 +76,7 @@ function CreateTask(){
     <!--no check
     mudar ajeitar essas chack boxes
     -->
-    <div class="NoAndCheck" onclick="o()">
+    <div class="NoAndCheck" onclick="check()">
     <img src="imgs to do list/no-check.svg" alt="">
     </div>
     
@@ -86,26 +87,30 @@ function CreateTask(){
     </div>`
     AreaTasks.innerHTML+=TaskNoCheck
   
-    CreateTaskBar.value=""
- 
+    CreateTaskBar.value="";
+  
   }else{
     
     alert("asdifef")
   }
   
-  console.log(oio)
+ 
   
 }
 TaskButton.addEventListener("click", () => {
   CreateTask()
   
 });
-
-console.log()
 function clearTheAreaTask(){
   AreaTasks.innerHTML="";
   
 }
 ButtonCard.addEventListener("click",clearTheAreaTask);
 
+
+const Tasks = document.getElementById("TaskNoCheck");
+
+function check(){
+     
+}
 
