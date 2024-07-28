@@ -66,8 +66,8 @@ let increase = 0;
 
 function CreateTask(){
   if (!CreateTaskBar.value.trim() == ""){
-    const taskValue = CreateTaskBar.value;
-    let TaskNoCheck = `<div class="taskStylea">
+    ++increase
+    let TaskNoCheck = `<div id= "${increase}" class="taskStylea">
     <div class="trashButtonContainer">
     <button class="trash">
     <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
@@ -76,17 +76,17 @@ function CreateTask(){
     <!--no check
     mudar ajeitar essas chack boxes
     -->
-    <div class="NoAndCheck" onclick="check()">
-    <img src="imgs to do list/no-check.svg" alt="">
+    <div class="NoAndCheck" onclick="check(${increase})">
+    <img  id= "icon_${increase}"  src="imgs to do list/no-check.svg" alt="">
     </div>
     
     <!--taks to make-->
     <div class="Area1">
-    <p class="taskStyle">${CreateTaskBar.value}</p>
+    <p id="${increase}" class="taskStyle">${CreateTaskBar.value}</p>
     </div>
     </div>`
-    AreaTasks.innerHTML+=TaskNoCheck
-  
+    AreaTasks.innerHTML+=TaskNoCheck;
+    
     CreateTaskBar.value="";
   
   }else{
@@ -97,10 +97,13 @@ function CreateTask(){
  
   
 }
+
+
 TaskButton.addEventListener("click", () => {
   CreateTask()
   
 });
+
 function clearTheAreaTask(){
   AreaTasks.innerHTML="";
   
@@ -110,7 +113,10 @@ ButtonCard.addEventListener("click",clearTheAreaTask);
 
 const Tasks = document.getElementById("TaskNoCheck");
 
-function check(){
-     
+function check(id){
+     let checkTask = document.getElementById(id);
+     checkTask.classList.add("taskCheckStyle");
+    let imageIcon = document.getElementById("icon_"+id)
+    imageIcon.setAttribute("src","imgs to do list/check.svg")
 }
 
