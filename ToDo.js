@@ -67,7 +67,7 @@ let increase = 0;
 function CreateTask(){
   if (!CreateTaskBar.value.trim() == ""){
     ++increase
-    let TaskNoCheck = `<div id= "${increase}" class="taskStylea">
+    let TaskNoCheck = `<div id= "task_${increase}" class="taskStylea">
     <div class="trashButtonContainer">
     <button class="trash">
     <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
