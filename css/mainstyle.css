@@ -243,8 +243,8 @@
  /*space to tasks*/
     .AreaTaskContainer{
         display: flex;
-        flex-direction: column;
-
+        flex-direction: column-reverse;
+        margin-bottom: 160px;
     }
 
 

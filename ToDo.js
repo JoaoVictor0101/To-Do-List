@@ -68,11 +68,12 @@ function CreateTask(){
   if (!CreateTaskBar.value.trim() == ""){
     ++increase
     let TaskNoCheck = `<div id= "task_${increase}" class="taskStylea">
+
     <div class="trashButtonContainer">
     <button class="trash">
     <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
-    </button>
     </div>
+   
     <!--no check
     mudar ajeitar essas chack boxes
     -->
@@ -118,5 +119,6 @@ function check(id){
      checkTask.classList.add("taskCheckStyle");
     let imageIcon = document.getElementById("icon_"+id)
     imageIcon.setAttribute("src","imgs to do list/check.svg")
+
 }
 
