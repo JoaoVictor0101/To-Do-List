@@ -241,13 +241,10 @@
      opacity: 0.5;
  }
  /*space to tasks*/
-    .AreaTaskContainer{
+.AreaTaskContainer{
         display: flex;
         flex-direction: column-reverse;
-        margin-bottom: 160px;
     }
-
-
  .taskStylea{
     display: flex;
     flex-direction: row;
@@ -300,6 +297,12 @@
  }
  .CheckStyle{
  opacity: 0.5;
+ }
+
+ .containerTasksCheck{
+    display: flex;
+    flex-direction: column-reverse;
+    margin-bottom: 150px
  }
  
  /* Scroll */

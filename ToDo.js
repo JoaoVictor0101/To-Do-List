@@ -51,16 +51,14 @@ let increase = 0;
 // resolver a questão de sumir com as tasks quando um novo card for criado 
 // tentando resolver questões do botão de check
 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
-// organizar logica é codigo para entender o que e por que estamos fazendo 
+
+//          IMPLEMENTAÇÕES DE TASKS 
+// adicionar o marque e desmarque das tasks 
+// ver a for de remover um appendChild para fazer a task subir quando ela for desmarcada
+// o remove de tasks também
+// ajeitar o scroll para tasks na vertical
+
+//            NAVEGAÇÃO -- mas check o keeps notes para mais informações 
 
 // pick the value and create tasks
 
@@ -78,7 +76,7 @@ function CreateTask(){
     mudar ajeitar essas chack boxes
     -->
     <div class="NoAndCheck" onclick="check(${increase})">
-    <img  id= "icon_${increase}"  src="imgs to do list/no-check.svg" alt="">
+    <img  id= "icon_${increase}"  class= "icon" src="imgs to do list/no-check.svg" alt="">
     </div>
     
     <!--taks to make-->
@@ -94,20 +92,17 @@ function CreateTask(){
     
     alert("asdifef")
   }
-  
- 
-  
 }
-
 
 TaskButton.addEventListener("click", () => {
   CreateTask()
   
 });
+const containerTasksCheck= document.getElementById("idContainerTasksCheck")
 
 function clearTheAreaTask(){
   AreaTasks.innerHTML="";
-  
+  containerTasksCheck.innerHTML="";
 }
 ButtonCard.addEventListener("click",clearTheAreaTask);
 
@@ -115,10 +110,18 @@ ButtonCard.addEventListener("click",clearTheAreaTask);
 const Tasks = document.getElementById("TaskNoCheck");
 
 function check(id){
-     let checkTask = document.getElementById(id);
-     checkTask.classList.add("taskCheckStyle");
-    let imageIcon = document.getElementById("icon_"+id)
+     let checkTask = document.getElementById("task_"+id);
+     let ClasStyle = document.getElementById(id);
+     let imageIcon = document.getElementById("icon_"+id)
+     let cla = imageIcon.getAttribute('class');
+     if (cla === "icon"){
+     ClasStyle.classList.add("taskCheckStyle");
     imageIcon.setAttribute("src","imgs to do list/check.svg")
-
+    containerTasksCheck.appendChild(checkTask);
+     }else{
+      ClasStyle.classList.remove("taskCheckStyle");
+      imageIcon.setAttribute("src","imgs to do list/no-check.svg")
+      AreaTasks.appendChild(checkTask);
+     }
 }
 
