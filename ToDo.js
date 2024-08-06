@@ -53,10 +53,8 @@ let increase = 0;
 
 
 //          IMPLEMENTAÇÕES DE TASKS 
-// adicionar o marque e desmarque das tasks 
-// ver a for de remover um appendChild para fazer a task subir quando ela for desmarcada
-// o remove de tasks também
 // ajeitar o scroll para tasks na vertical
+// colocar funcionalidade de criar tasks de um click no botão de enter
 
 //            NAVEGAÇÃO -- mas check o keeps notes para mais informações 
 
@@ -65,10 +63,10 @@ let increase = 0;
 function CreateTask(){
   if (!CreateTaskBar.value.trim() == ""){
     ++increase
-    let TaskNoCheck = `<div id= "task_${increase}" class="taskStylea">
+    let TaskNoCheck = `<div id="task_${increase}" class="taskStylea">
 
-    <div class="trashButtonContainer">
-    <button class="trash">
+    <div id="removeTask ${increase}" class="trashButtonContainer"">
+    <button class="trash"  onclick="removeTask(${increase})">
     <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
     </div>
    
@@ -109,16 +107,24 @@ ButtonCard.addEventListener("click",clearTheAreaTask);
 
 const Tasks = document.getElementById("TaskNoCheck");
 
+function removeTask(id){
+  let task = document.getElementById("task_"+id)
+  task.remove()
+}
+
+
 function check(id){
      let checkTask = document.getElementById("task_"+id);
      let ClasStyle = document.getElementById(id);
      let imageIcon = document.getElementById("icon_"+id)
-     let cla = imageIcon.getAttribute('class');
-     if (cla === "icon"){
+     let cla = checkTask.getAttribute('class');
+     if (cla == "taskStylea"){
+    checkTask.classList.add('yo')
      ClasStyle.classList.add("taskCheckStyle");
     imageIcon.setAttribute("src","imgs to do list/check.svg")
     containerTasksCheck.appendChild(checkTask);
      }else{
+      checkTask.classList.remove("yo")
       ClasStyle.classList.remove("taskCheckStyle");
       imageIcon.setAttribute("src","imgs to do list/no-check.svg")
       AreaTasks.appendChild(checkTask);
