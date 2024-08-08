@@ -54,6 +54,7 @@ let increase = 0;
 
 //          IMPLEMENTAÇÕES DE TASKS 
 // ajeitar o scroll para tasks na vertical
+// fazer alguns ajuste no estilo do scroll e um probleminha de gap quando se scrolla ate o final do card
 // colocar funcionalidade de criar tasks de um click no botão de enter
 
 //            NAVEGAÇÃO -- mas check o keeps notes para mais informações 

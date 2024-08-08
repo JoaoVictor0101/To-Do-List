@@ -157,6 +157,7 @@
      grid-template-rows: 35px 90px 70px 0px 70px; 
      height: 470px;
      border-radius: 6px;
+     overflow-y: hidden;
      
  }
  /* animation of the card */
@@ -241,6 +242,14 @@
      opacity: 0.5;
  }
  /*space to tasks*/
+ .scrollTasks{
+    height: 160px;
+    overflow-y: scroll;
+ }
+
+ .scrollTasks::-webkit-scrollbar{
+    background-color:#DEDFE8;
+ }
 .AreaTaskContainer{
         display: flex;
         flex-direction: column-reverse;
