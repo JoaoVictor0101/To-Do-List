@@ -52,12 +52,10 @@ let increase = 0;
 // tentando resolver questões do botão de check
 
 
-//          IMPLEMENTAÇÕES DE TASKS 
-// ajeitar o scroll para tasks na vertical
-// fazer alguns ajuste no estilo do scroll e um probleminha de gap quando se scrolla ate o final do card
-// colocar funcionalidade de criar tasks de um click no botão de enter
-
 //            NAVEGAÇÃO -- mas check o keeps notes para mais informações 
+
+// anlisar tarefas para a parte de navegção 
+// validção por tasks 
 
 // pick the value and create tasks
 
@@ -95,8 +93,15 @@ function CreateTask(){
 
 TaskButton.addEventListener("click", () => {
   CreateTask()
-  
 });
+
+CreateTaskBar.addEventListener("keyup", (e) =>{
+if (e.key === "Enter"){
+  e.preventDefault()
+  TaskButton.click()
+}
+})
+
 const containerTasksCheck= document.getElementById("idContainerTasksCheck")
 
 function clearTheAreaTask(){
