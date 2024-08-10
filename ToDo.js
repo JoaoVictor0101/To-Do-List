@@ -13,7 +13,7 @@ const gridCard = document.getElementById ("GridCard");
 const cardContainer = document.getElementById("cardContainer");
 const idNameList = document.getElementById("nameList");
 const ButtonCard = document.getElementById("plusHover");
-const inputDescription = document.getElementById("inputDescription") 
+const inputDescription = document.getElementById("inputDescription")
 const CreateTaskBar = document.getElementById("CreateTaskBar")
 const ContainerToDivClones = document.getElementById("cardContainerClones")
 const AreaTasks = document.getElementById("AreaTasks")
@@ -33,11 +33,18 @@ function createCard(){
       idNameList.value =""
     inputDescription.value = ""
     CreateTaskBar.value = ""
-    
+    localStorage.setItem("ContainerCloneCards",clone.innerHTML)
+   
+   
   }
 }
-
 ButtonCard.addEventListener("click",createCard);
+function Store() {
+  var storedContent = localStorage.getItem("ContainerCloneCards");
+  if (storedContent) {
+      document.getElementById("cardContainer").innerHTML = storedContent;
+  }
+};
 // tasks
 
 const TaskButton = document.getElementById("TaskButton");
@@ -53,6 +60,8 @@ let increase = 0;
 
 
 //            NAVEGAÇÃO -- mas check o keeps notes para mais informações 
+              // LOCALSTORAGE TASK
+// ESTAMOS IMPLEMENTANDO O LOCALSTORAGE E ESTÃO QUERENDO SUBSITITUIR O CARDCONTAINER ORIGINAL POR UMA VERSÃO ONDE O INNERHTML DELE JA ESTA ARMAZENADO NO LOCALSTORAGE
 
 // anlisar tarefas para a parte de navegção 
 // validção por tasks 
