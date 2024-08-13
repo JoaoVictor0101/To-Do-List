@@ -55,9 +55,12 @@ let increase = 0;
 
 // talvez depois mudar a forma de validação de card para permitir apenas tenha colocado algo nos campos
 
-// resolver a questão de sumir com as tasks quando um novo card for criado 
-// tentando resolver questões do botão de check
 
+// resolver erro de transferencia de informação do card anterior para o card novo e de não conseguir criar novos tasks nos cards antigos
+
+//      TRANSFERENCIA ENTRE TASKS ANTIGAS E NOVAS
+
+// A QUESTÃO DE TRANSFERENCIA DE TASKS ENTRE CARDS ANTIGOS E CARDS NOVOS PODE SER UMA QUESTÃO DE ID SEMELHANTES JA QUE AMBOS OS CONTAINERS CHECK SÃO DE MESMO ID
 
 //            NAVEGAÇÃO -- mas check o keeps notes para mais informações 
               // LOCALSTORAGE TASK
