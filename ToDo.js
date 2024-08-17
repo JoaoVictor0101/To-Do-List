@@ -51,6 +51,18 @@ const TaskButton = document.getElementById("TaskButton");
 
 let increase = 0;
 
+//    TALVEZ A SOLUÇÃO DOS NOSSOS PROBLEMAS ESTEJA EM FAZER CADA CARD SER UNICO AO INVES DE UMA COPIA 
+
+
+
+
+
+
+
+
+
+
+
 
 
 // talvez depois mudar a forma de validação de card para permitir apenas tenha colocado algo nos campos
