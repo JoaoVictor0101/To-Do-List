@@ -20,24 +20,73 @@ const AreaTasks = document.getElementById("AreaTasks")
 
 
 // creation/validation
+let i = 0
 
 function createCard(){ 
   if ((idNameList.value.trim() === "")){
     alert("add algo")
   }else{
       // 
-      let clone = cardContainer.cloneNode(true) 
-      let placeToClones = document.createElement("div")
-      placeToClones.appendChild(clone)
-      ContainerToDivClones.appendChild(placeToClones)
-      idNameList.value =""
+      ++i
+let clone = `<div id="cardContainer" class="cardStyle">
+
+  <div id="deleteCardContainer">
+      <button id="x" class="removeCardstyle" alt="remnovecard">
+          <img src="imgs to do list/remove-svgrepo-com.svg" alt="remove_card">
+          <!-- <i class="bi bi-x" style="font-size: 40px;"></i> 
+</button> -->
+  </div>
+
+  <!--Name list-->
+
+  <div class="Area">
+      <textarea rows="2" maxlength="25" type="text" minlength="1" placeholder="Crie sua lista"
+          class="NameListStyle" id="nameList"></textarea>
+  </div>
+
+  <!--Description-->
+
+  <div class="Area">
+      <textarea maxlength="80" id="inputDescription" class="descriptionStyle"
+          placeholder="description..."></textarea>
+  </div>
+  <!--Bar Creat Task and tasks-->
+
+
+  <div class="Area">
+      <input id="CreateTaskBar${i}" type="text" class="BartoTaskStyle">
+  </div>
+
+  <!---create button task-->
+
+  <div class="ButtontoTaskContainer">
+      <button class="ButtonTask" id="TaskButton${i}">
+          <img src="imgs to do list/plus-square-svgrepo-com.svg" alt="">
+      </button>
+  </div>
+
+  
+  <!--Gridtask-->
+  <div class="scrollTasks">
+  <div class="AreaTaskContainer" id="AreaTasks${i}">
+      
+      
+  </div>
+  <div id="idContainerTasksCheck"class="containerTasksCheck">
+
+  </div>
+</div>
+</div>`
+      const placeToClones = document.createElement("div")
+      placeToClones.innerHTML = clone
+     gridCard.appendChild(placeToClones)
     inputDescription.value = ""
     CreateTaskBar.value = ""
     localStorage.setItem("ContainerCloneCards",clone.innerHTML)
-   
-   
   }
 }
+const TaskButton2 = document.getElementById("TaskButton"+i)
+
 ButtonCard.addEventListener("click",createCard);
 function Store() {
   var storedContent = localStorage.getItem("ContainerCloneCards");
@@ -48,7 +97,7 @@ function Store() {
 // tasks
 
 const TaskButton = document.getElementById("TaskButton");
-
+console.log(TaskButton2+ "qwpqwkepkqwekqwpk")
 let increase = 0;
 
 //    TALVEZ A SOLUÇÃO DOS NOSSOS PROBLEMAS ESTEJA EM FAZER CADA CARD SER UNICO AO INVES DE UMA COPIA 
@@ -83,7 +132,9 @@ let increase = 0;
 
 // pick the value and create tasks
 
-function CreateTask(){
+function CreateTask(i){
+  let creattask = document.getElementById("CreateTaskBar"+i)
+  
   if (!CreateTaskBar.value.trim() == ""){
     ++increase
     let TaskNoCheck = `<div id="task_${increase}" class="taskStylea">
@@ -105,7 +156,8 @@ function CreateTask(){
     <p id="${increase}" class="taskStyle">${CreateTaskBar.value}</p>
     </div>
     </div>`
-    AreaTasks.innerHTML+=TaskNoCheck;
+   let AreaTask = document.getElementById("AreaTasks"+i)
+    AreaTask.innerHTML+=TaskNoCheck;
     
     CreateTaskBar.value="";
   
