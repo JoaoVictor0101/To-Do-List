@@ -22,7 +22,7 @@ const AreaTasks = document.getElementById("AreaTasks")
 // creation/validation
 let i = 0
 
-function createCard(){ 
+function createCard(iv){ 
   if ((idNameList.value.trim() === "")){
     alert("add algo")
   }else{
@@ -60,7 +60,7 @@ let clone = `<div id="cardContainer" class="cardStyle">
   <!---create button task-->
 
   <div class="ButtontoTaskContainer">
-      <button class="ButtonTask" id="TaskButton${i}">
+      <button class="ButtonTask" id="TaskButton${i}" onclick="TaskButton1(${i})">
           <img src="imgs to do list/plus-square-svgrepo-com.svg" alt="">
       </button>
   </div>
@@ -72,7 +72,7 @@ let clone = `<div id="cardContainer" class="cardStyle">
       
       
   </div>
-  <div id="idContainerTasksCheck"class="containerTasksCheck">
+  <div id="idContainerTasksCheck${i}"class="containerTasksCheck">
 
   </div>
 </div>
@@ -85,8 +85,40 @@ let clone = `<div id="cardContainer" class="cardStyle">
     localStorage.setItem("ContainerCloneCards",clone.innerHTML)
   }
 }
-const TaskButton2 = document.getElementById("TaskButton"+i)
+var CreateTaskBar1;
+var AreaTask
+var idContainerTasksCheck1
+function TaskButton1(iv){
+  CreateTaskBar1 = document.getElementById("CreateTaskBar"+iv)
+   AreaTask = document.getElementById("AreaTasks"+iv)
+   idContainerTasksCheck1 = document.getElementById("idContainerTasksCheck"+iv)
+  if (!CreateTaskBar1.value.trim() == ""){
+    ++increase
+    let TaskNoCheck = `<div id="task_${increase}" class="taskStylea">
 
+    <div id="removeTask ${increase}" class="trashButtonContainer"">
+    <button class="trash"  onclick="removeTask(${increase})">
+    <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
+    </div>
+   
+    <!--no check
+    mudar ajeitar essas chack boxes
+    -->
+    <div class="NoAndCheck" onclick="check(${increase})">
+    <img  id= "icon_${increase}"  class= "icon" src="imgs to do list/no-check.svg" alt="">
+    </div>
+    
+    <!--taks to make-->
+    <div class="Area1">
+    <p id="${increase}" class="taskStyle">${CreateTaskBar1.value}</p>
+    </div>
+    </div>`
+  
+    AreaTask.innerHTML+=TaskNoCheck;
+    
+    CreateTaskBar1.value="";
+  }
+}
 ButtonCard.addEventListener("click",createCard);
 function Store() {
   var storedContent = localStorage.getItem("ContainerCloneCards");
@@ -97,8 +129,9 @@ function Store() {
 // tasks
 
 const TaskButton = document.getElementById("TaskButton");
-console.log(TaskButton2+ "qwpqwkepkqwekqwpk")
 let increase = 0;
+
+
 
 //    TALVEZ A SOLUÇÃO DOS NOSSOS PROBLEMAS ESTEJA EM FAZER CADA CARD SER UNICO AO INVES DE UMA COPIA 
 
@@ -135,7 +168,7 @@ let increase = 0;
 function CreateTask(i){
   let creattask = document.getElementById("CreateTaskBar"+i)
   
-  if (!CreateTaskBar.value.trim() == ""){
+  /*if (!CreateTaskBar.value.trim() == ""){
     ++increase
     let TaskNoCheck = `<div id="task_${increase}" class="taskStylea">
 
@@ -156,8 +189,8 @@ function CreateTask(i){
     <p id="${increase}" class="taskStyle">${CreateTaskBar.value}</p>
     </div>
     </div>`
-   let AreaTask = document.getElementById("AreaTasks"+i)
-    AreaTask.innerHTML+=TaskNoCheck;
+  
+    AreaTasks.innerHTML+=TaskNoCheck;
     
     CreateTaskBar.value="";
   
@@ -165,6 +198,7 @@ function CreateTask(i){
     
     alert("asdifef")
   }
+    */
 }
 
 TaskButton.addEventListener("click", () => {
@@ -204,12 +238,12 @@ function check(id){
     checkTask.classList.add('yo')
      ClasStyle.classList.add("taskCheckStyle");
     imageIcon.setAttribute("src","imgs to do list/check.svg")
-    containerTasksCheck.appendChild(checkTask);
+    idContainerTasksCheck1.appendChild(checkTask);
      }else{
       checkTask.classList.remove("yo")
       ClasStyle.classList.remove("taskCheckStyle");
       imageIcon.setAttribute("src","imgs to do list/no-check.svg")
-      AreaTasks.appendChild(checkTask);
+      AreaTask.appendChild(checkTask);
      }
 }
 
