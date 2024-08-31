@@ -78,6 +78,7 @@ let clone = `<div id="cardContainer" class="cardStyle">
 </div>
 </div>`
       const placeToClones = document.createElement("div")
+      placeToClones.setAttribute('id','ip'+i)
       placeToClones.innerHTML = clone
      gridCard.appendChild(placeToClones)
     inputDescription.value = ""
@@ -116,13 +117,13 @@ function TaskButton1(iv){
   
     AreaTask.innerHTML+=TaskNoCheck;
     
-    CreateTaskBar1.value="";
+    CreateTaskBar1.value=""; 
   }
 }
 ButtonCard.addEventListener("click",createCard);
 function Store() {
   var storedContent = localStorage.getItem("ContainerCloneCards");
-  if (storedContent) {
+  if (storedContent){
       document.getElementById("cardContainer").innerHTML = storedContent;
   }
 };
@@ -228,11 +229,10 @@ function removeTask(id){
   task.remove()
 }
 
-
 function check(id){
      let checkTask = document.getElementById("task_"+id);
      let ClasStyle = document.getElementById(id);
-     let imageIcon = document.getElementById("icon_"+id)
+     let imageIcon = document.getElementById("icon_"+id);
      let cla = checkTask.getAttribute('class');
      if (cla == "taskStylea"){
     checkTask.classList.add('yo')
@@ -240,10 +240,43 @@ function check(id){
     imageIcon.setAttribute("src","imgs to do list/check.svg")
     idContainerTasksCheck1.appendChild(checkTask);
      }else{
-      checkTask.classList.remove("yo")
+      checkTask.classList.remove("yo");
       ClasStyle.classList.remove("taskCheckStyle");
       imageIcon.setAttribute("src","imgs to do list/no-check.svg")
       AreaTask.appendChild(checkTask);
      }
 }
+/*  let checkTask = document.getElementById("task_"+id);
+    let ClasStyle = document.getElementById(id);
+     let imageIcon = document.getElementById("icon_"+id);
+     let cla = checkTask.getAttribute('class');
+
+     if (cla == "taskStylea"){
+
+     checkTask.classList.add('yo')
+
+    ClasStyle.classList.add("taskCheckStyle");
+
+    imageIcon.setAttribute("src","imgs to do list/check.svg")
+   
+    criar as divs i e a antes dentro da div "scroll"
+    i creatElement ('div');
+   
+    a appendChild (i)
+
+    a remove ('div');
+  
+    else
+    checkTask.classList.remove("yo");
+      
+    ClasStyle.classList.remove("taskCheckStyle");
+    
+    imageIcon.setAttribute("src","imgs to do list/no-check.svg")
+
+    a creatElement('div');
+    i appendChild (a) 
+    i remove('div');
+*/ 
+
+
 
