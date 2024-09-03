@@ -67,11 +67,8 @@ let clone = `<div id="cardContainer" class="cardStyle">
 
   
   <!--Gridtask-->
-  <div class="scrollTasks">
-  <div class="AreaTaskContainer" id="AreaTasks${i}">
-      
-      
-  </div>
+  <div id="scroll${i}" class="scrollTasks">
+  <div id="AreaTasks${i}" class"AreaTaskContainer"></div>
   <div id="idContainerTasksCheck${i}"class="containerTasksCheck">
 
   </div>
@@ -86,13 +83,21 @@ let clone = `<div id="cardContainer" class="cardStyle">
     localStorage.setItem("ContainerCloneCards",clone.innerHTML)
   }
 }
+var DivtaskNock
+var Ida
+var srcollId
 var CreateTaskBar1;
 var AreaTask
 var idContainerTasksCheck1
 function TaskButton1(iv){
+  srcollId = document.getElementById("scroll"+iv)
   CreateTaskBar1 = document.getElementById("CreateTaskBar"+iv)
-   AreaTask = document.getElementById("AreaTasks"+iv)
+   AreaTask= document.getElementById("AreaTasks"+iv)
    idContainerTasksCheck1 = document.getElementById("idContainerTasksCheck"+iv)
+   DivtaskNock = document.createElement("div");
+   DivtaskNock.id="oi"+increase
+  srcollId.appendChild(DivtaskNock);
+  Ida = DivtaskNock.id;
   if (!CreateTaskBar1.value.trim() == ""){
     ++increase
     let TaskNoCheck = `<div id="task_${increase}" class="taskStylea">
@@ -115,7 +120,7 @@ function TaskButton1(iv){
     </div>
     </div>`
   
-    AreaTask.innerHTML+=TaskNoCheck;
+    DivtaskNock.innerHTML+=TaskNoCheck;
     
     CreateTaskBar1.value=""; 
   }
@@ -228,7 +233,7 @@ function removeTask(id){
   let task = document.getElementById("task_"+id)
   task.remove()
 }
-
+// VER FUNCIONALIDADES DE ARRAYS 
 function check(id){
      let checkTask = document.getElementById("task_"+id);
      let ClasStyle = document.getElementById(id);
@@ -238,12 +243,21 @@ function check(id){
     checkTask.classList.add('yo')
      ClasStyle.classList.add("taskCheckStyle");
     imageIcon.setAttribute("src","imgs to do list/check.svg")
-    idContainerTasksCheck1.appendChild(checkTask);
+    Ida.style.top ='30px'
+
+    let idContainerTasksCheck = document.createElement("div");
+    idContainerTasksCheck.id= "uoi"
+    srcollId.appendChild(idContainerTasksChec);
+    idContainerTasksCheck.appendChild(checkTas)
+    idContainerTasksCheck1.appendChild(checkTas);
      }else{
+      let removeCheckDiv=document.getElementById("uo")
       checkTask.classList.remove("yo");
       ClasStyle.classList.remove("taskCheckStyle");
       imageIcon.setAttribute("src","imgs to do list/no-check.svg")
-      AreaTask.appendChild(checkTask);
+      AreaTask.appendChild(checkTas);
+      removeCheckDi.remove()
+
      }
 }
 /*  let checkTask = document.getElementById("task_"+id);
@@ -276,6 +290,49 @@ function check(id){
     a creatElement('div');
     i appendChild (a) 
     i remove('div');
+
+    OUTRA RESPOSTA TALVEZ
+
+    Sim, é possível mudar a posição de uma `div` ao tocá-la usando JavaScript. Você pode usar eventos de toque (touch events) para detectar quando a `div` é tocada e, em seguida, alterar seu estilo para movê-la. Aqui está um exemplo simples de como fazer isso:
+
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mover Div ao Tocar</title>
+    <style>
+        #minhaDiv {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="minhaDiv"></div>
+
+    <script>
+        const minhaDiv = document.getElementById('minhaDiv');
+
+        minhaDiv.addEventListener('touchstart', function(event) {
+            // Muda a posição da div
+            minhaDiv.style.top = 'auto';
+            minhaDiv.style.left = 'auto';
+        });
+    </script>
+</body>
+</html>
+```
+
+Neste exemplo, a `div` com o ID `minhaDiv` muda de posição quando é tocada. Você pode ajustar os valores de `top` e `left` para a nova posição desejada⁴.
+
+Se precisar de mais alguma coisa ou tiver outras dúvidas, estou aqui para ajudar!
+
 */ 
 
 

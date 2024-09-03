@@ -251,8 +251,12 @@
  }
 .AreaTaskContainer{
         display: flex;
-        flex-direction: column-reverse;
+        flex-direction: column-revrse;
     }
+
+.ioi{
+  bottom: 20px
+}
  .taskStylea{
     display: flex;
     flex-direction: row;
