@@ -249,9 +249,10 @@
  .scrollTasks::-webkit-scrollbar{
     background-color:#DEDFE8;
  }
-.AreaTaskContainer{
-        display: flex;
-        flex-direction: column-revrse;
+.areaTaskContainer{
+    height: 60px;
+    display: flex;
+    flex-direction: column-reverse;
     }
 
 .ioi{
@@ -261,6 +262,12 @@
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
+    position: absolute;
+    
+ }
+
+ .moved{
+    transform: translatey(100%);
  }
  .trashButtonContainer{
     order: 3;

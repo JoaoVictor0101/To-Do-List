@@ -54,7 +54,7 @@ let clone = `<div id="cardContainer" class="cardStyle">
 
 
   <div class="Area">
-      <input id="CreateTaskBar${i}" type="text" class="BartoTaskStyle">
+      <input id="CreateTaskBar${i}" type="text" class="BartoTaskStyle" >
   </div>
 
   <!---create button task-->
@@ -68,7 +68,7 @@ let clone = `<div id="cardContainer" class="cardStyle">
   
   <!--Gridtask-->
   <div id="scroll${i}" class="scrollTasks">
-  <div id="AreaTasks${i}" class"AreaTaskContainer"></div>
+  <div id="AreaTasks${i}" class="areaTaskContainer"></div>
   <div id="idContainerTasksCheck${i}"class="containerTasksCheck">
 
   </div>
@@ -84,7 +84,7 @@ let clone = `<div id="cardContainer" class="cardStyle">
   }
 }
 var DivtaskNock
-var Ida
+var DivArry = []
 var srcollId
 var CreateTaskBar1;
 var AreaTask
@@ -94,19 +94,18 @@ function TaskButton1(iv){
   CreateTaskBar1 = document.getElementById("CreateTaskBar"+iv)
    AreaTask= document.getElementById("AreaTasks"+iv)
    idContainerTasksCheck1 = document.getElementById("idContainerTasksCheck"+iv)
-   DivtaskNock = document.createElement("div");
-   DivtaskNock.id="oi"+increase
-  srcollId.appendChild(DivtaskNock);
-  Ida = DivtaskNock.id;
+  // DivtaskNock = document.createElement("div");
+   //DivtaskNock.id="oi"+increase
+   //srcollId.appendChild(DivtaskNock);
   if (!CreateTaskBar1.value.trim() == ""){
     ++increase
     let TaskNoCheck = `<div id="task_${increase}" class="taskStylea">
-
+    
     <div id="removeTask ${increase}" class="trashButtonContainer"">
     <button class="trash"  onclick="removeTask(${increase})">
     <img src="imgs to do list/trash-01-svgrepo-com.svg" alt="">
     </div>
-   
+    
     <!--no check
     mudar ajeitar essas chack boxes
     -->
@@ -119,8 +118,8 @@ function TaskButton1(iv){
     <p id="${increase}" class="taskStyle">${CreateTaskBar1.value}</p>
     </div>
     </div>`
-  
-    DivtaskNock.innerHTML+=TaskNoCheck;
+    
+    AreaTask.innerHTML+=TaskNoCheck;
     
     CreateTaskBar1.value=""; 
   }
@@ -243,20 +242,20 @@ function check(id){
     checkTask.classList.add('yo')
      ClasStyle.classList.add("taskCheckStyle");
     imageIcon.setAttribute("src","imgs to do list/check.svg")
-    Ida.style.top ='30px'
-
-    let idContainerTasksCheck = document.createElement("div");
-    idContainerTasksCheck.id= "uoi"
-    srcollId.appendChild(idContainerTasksChec);
-    idContainerTasksCheck.appendChild(checkTas)
-    idContainerTasksCheck1.appendChild(checkTas);
+    
+    
+    //let idContainerTasksCheck = document.createElement("div");
+    //idContainerTasksCheck.id= "uoi"
+    //srcollId.appendChild(idContainerTasksChec);
+    //idContainerTasksCheck.appendChild(checkTas)
+    //idContainerTasksCheck1.appendChild(checkTas);
      }else{
-      let removeCheckDiv=document.getElementById("uo")
+      //let removeCheckDiv=document.getElementById("uo")
       checkTask.classList.remove("yo");
       ClasStyle.classList.remove("taskCheckStyle");
       imageIcon.setAttribute("src","imgs to do list/no-check.svg")
-      AreaTask.appendChild(checkTas);
-      removeCheckDi.remove()
+     // AreaTask.appendChild(checkTas);
+      //removeCheckDi.remove()
 
      }
 }
