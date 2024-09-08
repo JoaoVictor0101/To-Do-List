@@ -250,20 +250,18 @@
     background-color:#DEDFE8;
  }
 .areaTaskContainer{
-    height: 60px;
     display: flex;
     flex-direction: column-reverse;
-    }
+}
 
 .ioi{
   bottom: 20px
 }
+
  .taskStylea{
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    position: absolute;
-    
  }
 
  .moved{
