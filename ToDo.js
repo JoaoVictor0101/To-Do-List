@@ -17,12 +17,12 @@ const inputDescription = document.getElementById("inputDescription")
 const CreateTaskBar = document.getElementById("CreateTaskBar")
 const ContainerToDivClones = document.getElementById("cardContainerClones")
 const AreaTasks = document.getElementById("AreaTasks")
-
+var DivArry = []
 
 // creation/validation
 let i = 0
 
-function createCard(iv){ 
+function createCard(){ 
   if ((idNameList.value.trim() === "")){
     alert("add algo")
   }else{
@@ -80,17 +80,22 @@ let clone = `<div id="cardContainer" class="cardStyle">
      gridCard.appendChild(placeToClones)
     inputDescription.value = ""
     CreateTaskBar.value = ""
+    let io = document.getElementById(i)
     localStorage.setItem("ContainerCloneCards",clone.innerHTML)
+    console.log(io)
   }
 }
+console.log(DivArry)
 
+var o = 0
 var DivtaskNock
-var DivArry = []
+
 var srcollId
 var CreateTaskBar1;
 var AreaTask
 var idContainerTasksCheck1
 function TaskButton1(iv){
+  let tempArry=[]
   var ip = 0
   srcollId = document.getElementById("scroll"+iv)
   CreateTaskBar1 = document.getElementById("CreateTaskBar"+iv)
@@ -122,17 +127,22 @@ function TaskButton1(iv){
     <p id="${increase}"class="taskStyle">${CreateTaskBar1.value}</p>
     </div>
     </div>`
-     
-    ++ip
-    AreaTask.innerHTML+=TaskNoCheck;
+      if (iv >=1){ 
+     tempArry=[]
+     tempArry.push(TaskNoCheck)
+     }
+     DivArry.push(tempArry);
+     AreaTask.innerHtml = DivArry.join('')
+    
+    
+   // ++ip
+    //AreaTask.innerHTML+=TaskNoCheck;
     }else {
       alert("crie uma task")
     }
-    if(ip == 0){
-      alert("dmfo")
-    }else{
-      alert("ertert")
-    }
+    
+   
+  
     CreateTaskBar1.value=""; 
 }
 ButtonCard.addEventListener("click",createCard);
@@ -146,8 +156,7 @@ function Store() {
 
 const TaskButton = document.getElementById("TaskButton");
 let increase = 0;
-var o = 0
-console.log(increase)
+console.log(o)
 
 
 
