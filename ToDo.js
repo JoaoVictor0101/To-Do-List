@@ -18,14 +18,15 @@ const CreateTaskBar = document.getElementById("CreateTaskBar")
 const ContainerToDivClones = document.getElementById("cardContainerClones")
 const AreaTasks = document.getElementById("AreaTasks")
 var DivArry = []
-
+var io 
 // creation/validation
 let i = 0
-
+let tempArry=[]
+var AreaTaskss
 function createCard(){ 
-  if ((idNameList.value.trim() === "")){
-    alert("add algo")
-  }else{
+  //if ((idNameList.value.trim() === "")){
+   // alert("add algo")
+//  }else{
       // 
       ++i
 let clone = `<div id="cardContainer" class="cardStyle">
@@ -79,23 +80,24 @@ let clone = `<div id="cardContainer" class="cardStyle">
       placeToClones.innerHTML = clone
      gridCard.appendChild(placeToClones)
     inputDescription.value = ""
-    CreateTaskBar.value = ""
-    let io = document.getElementById(i)
+    CreateTaskBar.value = "" 
+    io = document.getElementById(i)
     localStorage.setItem("ContainerCloneCards",clone.innerHTML)
-    console.log(io)
-  }
+     
+ // }
+ 
+  
 }
-console.log(DivArry)
 
 var o = 0
 var DivtaskNock
+let increase = 0;
 
 var srcollId
 var CreateTaskBar1;
 var AreaTask
 var idContainerTasksCheck1
 function TaskButton1(iv){
-  let tempArry=[]
   var ip = 0
   srcollId = document.getElementById("scroll"+iv)
   CreateTaskBar1 = document.getElementById("CreateTaskBar"+iv)
@@ -121,23 +123,21 @@ function TaskButton1(iv){
     <div class="NoAndCheck" onclick="check(${increase})">
     <img  id= "icon_${increase}"  class= "icon" src="imgs to do list/no-check.svg" alt="check">
     </div>
+
     
     <!--taks to make-->
     <div class="Area1">
-    <p id="${increase}"class="taskStyle">${CreateTaskBar1.value}</p>
+    <p id="o${increase}"class="taskStyle">${CreateTaskBar1.value}</p>
     </div>
     </div>`
-      if (iv >=1){ 
-     tempArry=[]
-     tempArry.push(TaskNoCheck)
-     }
-     DivArry.push(tempArry);
-     AreaTask.innerHtml = DivArry.join('')
+      
     
+   //++ip
     
-   // ++ip
-    //AreaTask.innerHTML+=TaskNoCheck;
-    }else {
+   AreaTask.innerHTML+=TaskNoCheck
+   
+
+    }else{
       alert("crie uma task")
     }
     
@@ -146,6 +146,7 @@ function TaskButton1(iv){
     CreateTaskBar1.value=""; 
 }
 ButtonCard.addEventListener("click",createCard);
+
 function Store() {
   var storedContent = localStorage.getItem("ContainerCloneCards");
   if (storedContent){
@@ -155,8 +156,8 @@ function Store() {
 // tasks
 
 const TaskButton = document.getElementById("TaskButton");
-let increase = 0;
-console.log(o)
+
+
 
 
 
@@ -257,30 +258,32 @@ function removeTask(id){
 // VER FUNCIONALIDADES DE ARRAYS 
 function check(id){
      let checkTask = document.getElementById("task_"+id);
-     let ClasStyle = document.getElementById(id);
+     let ClasStyle = document.getElementById("o"+id);
      let imageIcon = document.getElementById("icon_"+id);
      let cla = checkTask.getAttribute('class');
      if (cla == "taskStylea"){
     checkTask.classList.add('yo')
-    // ClasStyle.classList.add("taskCheckStyle");
+     ClasStyle.classList.add("taskCheckStyle");
     imageIcon.setAttribute("src","imgs to do list/check.svg")
   
-    console.log(io)
+    
     
     //let idContainerTasksCheck = document.createElement("div");
     //idContainerTasksCheck.id= "uoi"
     //srcollId.appendChild(idContainerTasksCheck);
     //idContainerTasksCheck.appendChild(DivtaskNock)
 
-    //idContainerTasksCheck1.appendChild(checkTas);
+    
+   // idContainerTasksCheck1.appendChild(checkTask);
      }else{
       //let removeCheckDiv=document.getElementById("uoi")
       checkTask.classList.remove("yo");
       ClasStyle.classList.remove("taskCheckStyle");
       imageIcon.setAttribute("src","imgs to do list/no-check.svg")
-     // AreaTask.appendChild(checkTas);
-      
-
+     // AreaTask.appendChild(checkTask);
+     }
+    }
+/*
      }
 }
 /*  let checkTask = document.getElementById("task_"+id);

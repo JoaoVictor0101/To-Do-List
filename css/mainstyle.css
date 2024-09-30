@@ -136,10 +136,13 @@
      align-items: center;
      justify-content: start;
      margin-left: 460px;
-     overflow: hidd;
+     overflow: hidden;
      width: 400px;
      height: 530px;
  }
+
+ 
+
  
  .cardContainerCloneStyle{
      display: flex;
